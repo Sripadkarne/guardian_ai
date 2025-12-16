@@ -1,8 +1,7 @@
 # Guardian AI
 
-# Guardian AI — Dual-Stream Video Analysis
 
-Guardian AI is a reference implementation of a dual-stream, agentic video analysis system built for GPU-accelerated environments. It demonstrates how to ingest video, run multimodal reasoning on it, and surface both high-level summaries and time-localized events with visual evidence.
+Guardian AI is a reference implementation of a multi-video, agentic video analysis system built for GPU-accelerated environments. It demonstrates how to ingest video, run multimodal reasoning on it, and surface both high-level summaries and time-localized events with visual evidence.
 
 The project was originally developed as a live system during the NVIDIA & Dell GB10 Hackathon and later refactored into a clean, modular architecture suitable for reuse, extension, and open-source sharing.
 
@@ -49,3 +48,49 @@ Instead, it connects to a **locally running inference service** (referred to as 
 http://localhost:8000
 ```
 
+That service is responsible for:
+- Hosting the actual vision-language model
+- Performing GPU-accelerated inference
+- Streaming results back to the app
+
+The Streamlit app acts as a client and orchestration layer only.
+
+---
+
+## Requirements
+
+- Python 3.10+
+- A running inference service that exposes:
+  - `POST /files` for video upload
+  - `POST /summarize` for multimodal inference (streaming)
+
+Optional:
+- NVIDIA GPU (for acceleration and GPU monitoring)
+- `nvidia-smi` available in PATH (for utilization display)
+- OpenCV (for live camera capture)
+
+---
+
+## Running the app
+
+1. Start your local inference service on port 8000  
+2. Install dependencies
+```
+pip install -r requirements.txt
+```
+
+4. Launch the UI
+```
+streamlit run app.py
+```
+
+## Notes
+
+- The system is model-agnostic at the UI level. Any vision-language model that supports video inputs and streaming responses can be swapped in behind the inference service.
+- All model outputs are treated as untrusted and parsed defensively.
+
+---
+
+
+
+    
