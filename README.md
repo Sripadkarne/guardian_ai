@@ -3,7 +3,7 @@
 
 Guardian AI is a reference implementation of a multi-video, agentic video analysis system built for GPU-accelerated environments. It demonstrates how to ingest video, run multimodal reasoning on it, and surface both high-level summaries and time-localized events with visual evidence.
 
-The project was originally developed as a live system during the NVIDIA & Dell GB10 Hackathon and later refactored into a clean, modular architecture suitable for reuse, extension, and open-source sharing.
+The project was originally developed as a live system during the NVIDIA & Dell GB10 Hackathon and has been refactored into a clean, modular architecture suitable for reuse, extension, and open-source sharing.
 
 ---
 
