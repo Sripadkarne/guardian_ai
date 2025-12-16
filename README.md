@@ -63,6 +63,7 @@ The Streamlit app acts as a client and orchestration layer only.
 - A running inference service that exposes:
   - `POST /files` for video upload
   - `POST /summarize` for multimodal inference (streaming)
+- MoviePy requires ```ffpmeg``` to be installed on the system. 
 
 Optional:
 - NVIDIA GPU (for acceleration and GPU monitoring)
